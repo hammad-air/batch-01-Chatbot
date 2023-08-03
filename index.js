@@ -1,16 +1,14 @@
-const express = require("express");
-const webApp = express();
-const PORT = process.env.PORT || 5000;
-webApp.use(express.urlencoded({
-    extended: true
-}));
-webApp.use(express.json());
+const express = require('express')
+const app = express()
+const port = 3001
 
-webApp.get('/', (req, res) => {
-    res.sendStatus(200);
-    res.send("Status Okay")
-});
-
-webApp.listen(PORT, () => {
-    console.log(`Server is up and running at http://localhost:${PORT}/`);
-});
+app.get('/hammad', (req, res) => {
+  res.send('Hello World for checking')
+})
+app.get('/about', (req, res) => {
+    res.send('this is about page')
+  })
+  
+app.listen(port, () => {
+  console.log(`Example app listening on port ${port}`)
+})
